@@ -1,0 +1,11 @@
+#Automatic backups
+
+1. Made a directory "backup"
+
+2. Made MySQLdump.sh and gave the permission to make a executable using chmod +x MySQLdump.sh
+
+3. Started crontab -e and added he script. See below.
+
+30 17 * * * /home/ubuntu/backup/MySQLdump.sh 2>&1>>/home/ubuntu/backup/mysqlbackup.log
+
+4. To check the cron job, use crontab -l
