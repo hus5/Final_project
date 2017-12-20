@@ -1,0 +1,17 @@
+Steps to configure Nagios Client Machine
+#https://www.youtube.com/watch?v=veL0W257gXI
+
+sudo su
+apt-get update
+apt-get upgrade -y
+apt-get dist-upgrade -y
+apt-get autoremove -y
+apt-get install nagios-plugins nagios-nrpe-server -y
+
+nano /etc/nagios/nrpe.cfg
+
+Edit
+----
+allowed_hosts=127.0.0.1 PRIVATE_IP_NAGIOS_SERVER
+
+service nagios-nrpe-server restart
